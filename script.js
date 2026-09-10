@@ -13,7 +13,6 @@
   /* ----- 2. Projects / publications tabs ----- */
   const tabs = Array.from(document.querySelectorAll("[data-tab]"));
   const panels = Array.from(document.querySelectorAll("[data-tab-panel]"));
-  const indexLabel = document.querySelector("[data-index-label]");
 
   const activateTab = (tab, moveFocus = false) => {
     const target = tab.dataset.tab;
@@ -27,10 +26,6 @@
     panels.forEach((panel) => {
       panel.hidden = panel.dataset.tabPanel !== target;
     });
-
-    if (indexLabel) {
-      indexLabel.textContent = target === "projects" ? "Index — 05 projects" : "Index — 02 publications";
-    }
 
     if (moveFocus) tab.focus();
     window.dispatchEvent(new Event("scroll"));
