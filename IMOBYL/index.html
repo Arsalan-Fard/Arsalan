@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i-MOBYL Tangible Mapping &mdash; Arsalan</title>
+  <meta name="description" content="A tangible mapping tool for the i-MOBYL workshops. Students aged 11 to 15 fill in a paper map and see the results of the whole group on a projected map during the same session." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div class="page project-page">
+    <a class="back-button" href="../index.html#projects" aria-label="Back to Projects">
+      <span class="back-button__arrow" aria-hidden="true">&larr;</span>
+    </a>
+
+    <main>
+      <header class="project-intro">
+        <h1 class="project-title">i-MOBYL</h1>
+        <p class="project-lede">i-MOBYL is a European research project about how young adolescents (11 to 15 years old) get around their city. I built a tangible mapping tool for its workshops. Students first fill in a paper map, and then see the results of the whole group on a projected map during the same session.</p>
+      </header>
+
+      <figure class="project-figure project-figure--hero">
+        <img src="workshop-session.jpg" alt="Students around a city map projected on the floor, seen from above. One of them points at a paper card that shows a street view" width="1536" height="1152" />
+        <figcaption>Students around the projected map during a session. The paper card works as a small screen: it shows the street view of the place it is put on. People are blurred for privacy.</figcaption>
+      </figure>
+
+      <section class="project-summary" aria-labelledby="overview-title">
+        <h2 id="overview-title">Overview</h2>
+        <div class="project-summary__body">
+          <p>i-MOBYL studies the mobility of young adolescents in five countries. In the workshops, students work on a printed map of their area. They put stickers on the places they like or dislike, draw the routes they usually take, and answer a few other questions on the map.</p>
+          <p>Paper is easy for everyone to use, but the results normally only come later, after someone has entered all the data by hand. This tool is an addition to the paper map, not a replacement. We take a photo of each finished map, and the software reads the stickers and the drawn routes from the photo.</p>
+          <p>The combined results are then projected during the same session. Students see a heatmap of the places the group liked and disliked. They can also put a paper card on the projected map to see the street view of that place, which helps them discuss it together.</p>
+
+        
+
+          <div class="project-actions">
+            <a class="source-link" href="https://www.i-mobyl.eu/" target="_blank" rel="noopener noreferrer">About i-MOBYL <span aria-hidden="true">&nearr;</span></a>
+            <a class="source-link" href="../Digital Participatory Mapping/index.html">Related publication <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+      </section>
+
+      <figure class="project-figure project-figure--pair">
+        <div class="map-pair">
+          <figure>
+            <img src="paper-map.jpg" alt="A printed neighbourhood map covered in coloured circle, triangle and square stickers, with routes drawn over it in black and red marker" loading="lazy" width="1600" height="806" />
+            <figcaption><b>Paper map</b>A map filled in by a student. Stickers show liked and disliked places, and the lines are usual routes. The markers in the corners help the software locate the map in the photo.</figcaption>
+          </figure>
+          <figure>
+            <img src="digitized-map.jpg" alt="The same map area in the tool, with the stickers shown as coloured crosses and the routes as lines" loading="lazy" width="903" height="455" />
+            <figcaption><b>Digitized map</b>The same map after the photo is processed. Every sticker and route is now on the digital map.</figcaption>
+          </figure>
+        </div>
+        <figcaption>The same map before and after digitizing. A phone photo is enough.</figcaption>
+      </figure>
+
+
+      <figure class="project-figure project-figure--tall">
+        <video src="session-tool.mp4" poster="session-tool-poster.jpg"
+          width="1280" height="1440" autoplay muted loop playsinline preload="metadata"
+          aria-label="The mapping tool in use. The top half shows the projected map with a heatmap, the bottom half shows the table with paper cards that display street view and a 3D view"></video>
+        <figcaption>The tool in use, 6x speed. Top: what is projected. Bottom: the table. The heatmap shows the answers of the group, and the paper cards show the street view and a 3D view of the place they are put on.</figcaption>
+      </figure>
+    </main>
+
+    <footer class="project-footer">
+      <span>&copy; <span data-year>2026</span></span>
+    </footer>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

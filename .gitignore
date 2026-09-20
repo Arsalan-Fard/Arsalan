@@ -11,3 +11,9 @@ Desktop.ini
 # Source code for the case studies lives in its own repo, linked
 # from each project page. Do not vendor those clones back in here.
 node_modules/
+
+# IMOBYL raw captures. The workshop photo and video show minors unblurred and
+# carry the session audio; only the anonymised derivatives on the page ship.
+IMOBYL/WhatsApp*
+IMOBYL/paper_map.jpg
+IMOBYL/digitize map.png
