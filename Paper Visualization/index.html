@@ -17,7 +17,7 @@
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <div class="page project-page">
-    <a class="back-button" href="../index.html" aria-label="Back to Index of work">
+    <a class="back-button" href="../index.html#projects" aria-label="Back to Projects">
       <span class="back-button__arrow" aria-hidden="true">&larr;</span>
     </a>
 
@@ -25,20 +25,19 @@
       <header class="project-intro">
         <h1 class="project-title">Co-Citation Visualization</h1>
         <p class="project-supervisor">Supervised by Emmanuel Pietriga</p>
-        <p class="project-lede">An exploratory and interactive literature review system revealing shared foundations, topic bridges, citation flows, and which papers may be worth reading next. Using the OpenAlex categorization, a Sankey diagram shows which fields a paper draws on in its references and which fields cite it, representing the flow of knowledge.</p>
+        <p class="project-lede">Scientific papers are closely connected, yet most search tools present them as a flat list. Inspired by GraphDice, this interactive D3.js tool models a personal paper collection through co-citation and bibliographic coupling, smoothly interpolating between attribute-driven scatterplots and force-directed networks to reveal topical clusters, cross-disciplinary bridges, and which unread papers to read next.</p>
       </header>
 
       <figure class="project-figure project-figure--hero">
-        <img src="546653048-1ab09ee1-f453-43fa-9c39-141828956973.png" alt="Co-citation visualization dashboard with layout controls, network graph, Sankey diagram, recommendation heatmap, and paper hierarchy" width="1910" height="906" />
-        <figcaption>Linked views of the network, citation flow, recommendations, and fields.</figcaption>
+        <img src="2.png" alt="Full interface showing layout controls, a scatterplot of Field-Weighted Citation Impact against citation count, a recommendation heatmap, and a radial hierarchy of research fields" width="1896" height="902" />
+        <figcaption>The interface at stability 1.00: plotting Field-Weighted Citation Impact (FWCI) against citation count highlights a paper in the bottom-right that outperforms expectations in its subfield (Geography, Planning and Development) and ranks at the top of the recommendation heatmap.</figcaption>
       </figure>
 
       <section class="project-summary" aria-labelledby="overview-title">
         <h2 id="overview-title">Overview</h2>
         <div class="project-summary__body">
-          <p>The project begins with 59 papers collected for research on public participatory design. A reproducible Python pipeline resolves their DOIs through OpenAlex, gathers metadata and references, then derives weighted co-citation and bibliographic-coupling graphs for the browser application.</p>
-          <p>The D3.js interface then shows the papers either as a scatterplot or as a force-directed network. A stability control continuously blends those layouts, allowing users to expose clusters without losing the meaning of axes such as publication date, citation count, field-weighted impact, or research field.</p>
-          <p>Selection is coordinated across the network, a Sankey view of cited and citing fields, a heatmap that ranks unread papers against the user&rsquo;s reading history, and a radial hierarchy of domain, field, and subfield. Together, the views support exploratory search rather than presenting another flat bibliography.</p>
+          <p>Built on OpenAlex metadata and citation graphs for a research reading corpus, the tool connects papers through two complementary lenses. Co-citation links two papers when later publications cite them together, showing how a community groups them over time, while bibliographic coupling links papers that share references, capturing common foundations at publication time. Users can assign attributes such as publication date, citation count, FWCI, betweenness centrality, or research field to the X and Y axes, and use a stability slider to continuously blend between a fixed attribute scatterplot (stability&nbsp;=&nbsp;1) and a force-directed network layout (stability&nbsp;=&nbsp;0). Selections stay linked across a Sankey diagram of cited and citing fields, a radial hierarchy of domains, fields, and subfields, and a recommendation heatmap that scores unread papers by their connection strength to the user&rsquo;s read set.</p>
+          <p>Blending axis constraints with network forces exposes structure that neither view shows alone. For instance, mapping both axes to each paper&rsquo;s research field at stability&nbsp;1 places papers along the diagonal by discipline so cross-field co-citation links are easy to spot. Lowering stability slightly to 0.96 keeps papers anchored near their field axes while allowing co-citation forces to pull frequently co-cited works together and separate weakly related ones. This hybrid view reveals interdisciplinary bridge papers, such as those connecting Environmental Science and Social Sciences, which are simultaneously surfaced as top candidates in the recommendation heatmap.</p>
 
           <div class="project-actions">
             <a class="source-link" href="https://github.com/Arsalan-Fard/Co-Citation-Visualization" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">&nearr;</span></a>
@@ -46,16 +45,14 @@
         </div>
       </section>
 
-      <section class="project-summary" aria-labelledby="relationships-title">
-        <h2 id="relationships-title">Two views of related work</h2>
-        <div class="project-summary__body">
-          <p>The network can link papers in two complementary ways. With co-citation, two papers are linked when later publications cite them together, which shows how a research community groups earlier work over time. With bibliographic coupling, two papers are linked when they share references, which shows the common foundations they built on when they were published.</p>
-        </div>
-      </section>
+      <figure class="project-figure project-figure--secondary">
+        <img src="5.png" alt="Side-by-side comparison of a field-by-field co-citation scatterplot at stability 1.0 and a hybrid layout at stability 0.96 alongside the recommendation heatmap and paper hierarchy" loading="lazy" width="2356" height="753" />
+        <figcaption>Field-by-field axes at stability 1.0 (left) expose cross-field co-citation links; relaxing stability to 0.96 (right) lets co-citation forces pull related papers between Environmental Science and Social Sciences together while highlighting them in the recommendation heatmap.</figcaption>
+      </figure>
 
       <figure class="project-figure project-figure--secondary">
-        <img src="546653014-5279d097-c2bb-4fa6-befa-8c0a82e758de.png" alt="Dense co-citation network beside recommended-paper controls and a radial hierarchy of research fields" loading="lazy" width="1892" height="886" />
-        <figcaption>The force-directed view shows clusters and bridge papers.</figcaption>
+        <img src="0.5.png" alt="Co-citation network with citation-burst rings and highlighted nodes when selecting the Physical Sciences domain in the radial treemap" loading="lazy" width="1881" height="902" />
+        <figcaption>Selecting the Physical Sciences domain in the radial treemap highlights all matching papers in the network&mdash;with green for read papers, purple for surveys, and concentric rings for temporal citation bursts&mdash;and updates the recommendation heatmap.</figcaption>
       </figure>
     </main>
 
