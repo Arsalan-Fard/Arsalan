@@ -1,43 +1,26 @@
 /* =========================================================
    Index of Work — an editorial archive, not a card grid.
-   Palette: charcoal · soft white · a single ocean-blue accent.
-   Type: Inter alone — display sizes down to the small caps labels.
+   Palette: daylight off-white · near-black ink · a single ocean-blue accent.
+   Type: Figtree alone — bold display sizes down to the small caps labels.
    ========================================================= */
 
 :root {
-  --paper:      #141414;
-  --paper-2:    #1d1d1d;
-  --ink:        #f3f1eb;
-  --ink-soft:   #b8b5ad;
-  --ink-faint:  #77756f;
-  --rule:       rgba(255, 255, 255, 0.12);
-  --accent:     #4ea9d8;
-  --live:       #4ea9d8;
+  --paper:      #fafafa;
+  --paper-2:    #efefed;
+  --ink:        #111111;
+  --ink-soft:   #444444;
+  --ink-faint:  #6b6b6b;
+  --rule:       rgba(0, 0, 0, 0.1);
+  --accent:     #1f74ab;   /* text-safe blue on the off-white paper */
+  --live:       #4ea9d8;   /* brighter blue, decoration only */
   --pulse:      78, 169, 216;
 
-  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sans: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --edge: clamp(1.25rem, 5vw, 5rem);   /* page side padding */
   --maxw: 1180px;
 
-  color-scheme: dark;
-}
-
-/* ---------- dark / day theme ---------- */
-[data-theme="dark"] {
-  --paper:     #141414;
-  --paper-2:   #1d1d1d;
-  --ink:       #f3f1eb;
-  --ink-soft:  #b8b5ad;
-  --ink-faint: #77756f;
-  --rule:      rgba(255, 255, 255, 0.12);
-  --accent:    #4ea9d8;
-  --live:      #4ea9d8;
-  --pulse:     78, 169, 216;
-  color-scheme: dark;
-}
-[data-theme="dark"] body {
-  background-image: linear-gradient(145deg, #181818 0%, #121212 54%, #1a1a1a 100%);
+  color-scheme: light;
 }
 
 /* ---------- reset-ish ---------- */
@@ -54,8 +37,6 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  background-image: linear-gradient(145deg, #181818 0%, #121212 54%, #1a1a1a 100%);
-  background-attachment: fixed;
 }
 
 img { display: block; max-width: 100%; height: auto; }
@@ -76,8 +57,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ---------- layout shell ---------- */
+/* --maxw is the content width; the side padding sits outside it */
 .page {
-  max-width: var(--maxw);
+  max-width: calc(var(--maxw) + 2 * var(--edge));
   margin-inline: auto;
   padding: clamp(2rem, 7vw, 5.5rem) var(--edge) 4rem;
 }
@@ -135,19 +117,18 @@ a { color: inherit; text-decoration: none; }
 
 .masthead__name {
   font-family: var(--sans);
-  font-weight: 400;
-  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .masthead__bio {
   font-family: var(--sans);
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.02rem, 2vw, 1.3rem);
+  font-weight: 400;
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
   color: var(--ink-soft);
-  max-width: 42ch;
+  max-width: 52ch;
   margin-top: 1rem;
   line-height: 1.4;
 }
@@ -206,8 +187,6 @@ a { color: inherit; text-decoration: none; }
 }
 .theme-toggle__icon { display: inline-block; }
 .icon-sun { display: none; }
-[data-theme="dark"] .icon-moon { display: none; }
-[data-theme="dark"] .icon-sun { display: inline-block; }
 
 /* =========================================================
    SECTION TABS
@@ -240,7 +219,7 @@ a { color: inherit; text-decoration: none; }
   /* same editorial voice as the work titles below, one step down in scale */
   font-family: var(--sans);
   font-size: clamp(1.05rem, 2.2vw, 1.32rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.005em;
   cursor: pointer;
@@ -318,7 +297,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 18ch;
   font-family: var(--sans);
   font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.08;
 }
 
@@ -375,12 +354,13 @@ a { color: inherit; text-decoration: none; }
 .work:hover::after,
 .work:focus-within::after { transform: scaleX(1); }
 
+/* thumbnail one third, text two thirds, year tucked on the right */
 .work__link {
   display: grid;
-  grid-template-columns: clamp(200px, 30vw, 400px) 1fr auto;
-  gap: clamp(1.1rem, 3.5vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) auto;
+  gap: clamp(1.1rem, 3vw, 2.5rem);
   align-items: start;
-  padding: clamp(1.8rem, 4.5vw, 3.4rem) 0;
+  padding: clamp(1.5rem, 3.2vw, 2.4rem) 0;
 }
 
 /* --- thumbnail --- */
@@ -391,17 +371,17 @@ a { color: inherit; text-decoration: none; }
   background: var(--paper-2);
   aspect-ratio: 16 / 10;
   position: relative;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .work__thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.015);
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.work:hover .work__thumb img,
-.work:focus-within .work__thumb img {
-  transform: scale(1.05);
+/* the whole frame grows on hover; the picture inside keeps its crop */
+.work:hover .work__thumb,
+.work:focus-within .work__thumb {
+  transform: scale(1.04);
 }
 
 .work__thumb--contain {
@@ -410,16 +390,10 @@ a { color: inherit; text-decoration: none; }
 
 .work__thumb--contain img {
   object-fit: contain;
-  transform: scale(1);
 }
 
 .work__thumb--paper {
   background: #eef3f5;
-}
-
-.work:hover .work__thumb--contain img,
-.work:focus-within .work__thumb--contain img {
-  transform: scale(1.025);
 }
 
 /* --- body text --- */
@@ -452,12 +426,13 @@ a { color: inherit; text-decoration: none; }
   100% { box-shadow: 0 0 0 0 rgba(var(--pulse), 0); }
 }
 
+/* titles stay about 1.3× the description, so a row reads as one block */
 .work__title {
   font-family: var(--sans);
-  font-weight: 400;
-  font-size: clamp(1.5rem, 3.4vw, 2.15rem);
-  line-height: 1.04;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  font-size: clamp(1.18rem, 1.8vw, 1.4rem);
+  line-height: 1.22;
+  letter-spacing: -0.005em;
   display: inline-block;
   position: relative;
 }
@@ -485,32 +460,36 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.1em;
   color: var(--ink-faint);
   text-transform: uppercase;
-  margin-top: 0.8rem;
+  margin-top: 0.55rem;
 }
 .work__desc {
   font-family: var(--sans);
-  font-size: clamp(0.98rem, 1.6vw, 1.12rem);
+  font-size: clamp(0.98rem, 1.3vw, 1.06rem);
   color: var(--ink-soft);
-  max-width: 42ch;
-  margin-top: 0.7rem;
-  line-height: 1.45;
+  max-width: 70ch;
+  margin-top: 0.6rem;
+  line-height: 1.6;
 }
 
 /* supervisor, shown on the index rows and under each project page title */
 .work__supervisor {
   display: block;
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
   font-family: var(--sans);
   font-size: 0.92rem;
   color: var(--ink-soft);
 }
 
-.project-supervisor {
+/* project pages: who supervised / who co-wrote — one meta line style */
+.project-supervisor,
+.project-authors {
   margin-top: clamp(0.9rem, 2vw, 1.3rem);
   font-family: var(--sans);
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: var(--ink-soft);
 }
+.project-supervisor + .project-authors { margin-top: 0.3rem; }
 
 /* --- year + arrow on the right --- */
 .work__year {
@@ -528,9 +507,6 @@ a { color: inherit; text-decoration: none; }
 /* =========================================================
    CURRENT (top) project — set apart as "alive"
    ========================================================= */
-.work--current .work__title { font-size: clamp(1.9rem, 4.6vw, 2.9rem); }
-.work--current .work__desc  { font-size: clamp(1.04rem, 1.8vw, 1.2rem); max-width: 46ch; }
-
 /* a slow sheen that periodically passes over the current thumbnail */
 .work--current .work__thumb::after {
   content: "";

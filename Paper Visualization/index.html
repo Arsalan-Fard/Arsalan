@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="project.css" />
@@ -23,9 +23,9 @@
 
     <main>
       <header class="project-intro">
-        <h1 class="project-title">Co-Citation<br />Visualization</h1>
+        <h1 class="project-title">Co-Citation Visualization</h1>
         <p class="project-supervisor">Supervised by Emmanuel Pietriga</p>
-        <p class="project-lede">An exploratory and interactive literature review system revealing shared foundations, topic bridges, citation flows, and which papers may be worth reading next. Using the OpenAlex categorization we can see what school of thoughts a paper is used in their references and what type of papers are citing them, represeting the flow of knowledge in the sankey diagram.</p>
+        <p class="project-lede">An exploratory and interactive literature review system revealing shared foundations, topic bridges, citation flows, and which papers may be worth reading next. Using the OpenAlex categorization, a Sankey diagram shows which fields a paper draws on in its references and which fields cite it, representing the flow of knowledge.</p>
       </header>
 
       <figure class="project-figure project-figure--hero">
@@ -37,31 +37,19 @@
         <h2 id="overview-title">Overview</h2>
         <div class="project-summary__body">
           <p>The project begins with 59 papers collected for research on public participatory design. A reproducible Python pipeline resolves their DOIs through OpenAlex, gathers metadata and references, then derives weighted co-citation and bibliographic-coupling graphs for the browser application.</p>
-          <p>Then the D3.js interface will present a scatterplot as a force-directed network. A stability control continuously blends those layouts, allowing users to expose clusters without losing the meaning of axes such as publication date, citation count, field-weighted impact, or research field.</p>
+          <p>The D3.js interface then shows the papers either as a scatterplot or as a force-directed network. A stability control continuously blends those layouts, allowing users to expose clusters without losing the meaning of axes such as publication date, citation count, field-weighted impact, or research field.</p>
           <p>Selection is coordinated across the network, a Sankey view of cited and citing fields, a heatmap that ranks unread papers against the user&rsquo;s reading history, and a radial hierarchy of domain, field, and subfield. Together, the views support exploratory search rather than presenting another flat bibliography.</p>
 
-
-
-          <a class="source-link" href="https://github.com/Arsalan-Fard/Co-Citation-Visualization" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">&nearr;</span></a>
+          <div class="project-actions">
+            <a class="source-link" href="https://github.com/Arsalan-Fard/Co-Citation-Visualization" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">&nearr;</span></a>
+          </div>
         </div>
       </section>
 
-      <section class="relationship-types" aria-labelledby="relationships-title">
-        <div class="relationship-types__heading">
-          <p>Network logic</p>
-          <h2 id="relationships-title">Two complementary views of related work</h2>
-        </div>
-        <div class="relationship-types__grid">
-          <article>
-            <span>01</span>
-            <h3>Co-citation</h3>
-            <p>Two papers are linked when later publications cite them together, revealing how a research community groups earlier work over time.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Bibliographic coupling</h3>
-            <p>Two papers are linked when they share references, revealing common intellectual foundations at the time they were published.</p>
-          </article>
+      <section class="project-summary" aria-labelledby="relationships-title">
+        <h2 id="relationships-title">Two views of related work</h2>
+        <div class="project-summary__body">
+          <p>The network can link papers in two complementary ways. With co-citation, two papers are linked when later publications cite them together, which shows how a research community groups earlier work over time. With bibliographic coupling, two papers are linked when they share references, which shows the common foundations they built on when they were published.</p>
         </div>
       </section>
 

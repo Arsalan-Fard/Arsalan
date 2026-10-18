@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="project.css" />
@@ -25,48 +25,25 @@
       <header class="project-intro">
         <h1 class="project-title">Yu-Gi-Oh</h1>
         <p class="project-supervisor">Supervised by Amin Fazli</p>
-        <p class="project-lede">Developing Yu-Gi-Oh (a famous card game) with Java and JavaFX during my first year at Sharif University of Technology. It covers Object Oriented Programming (OOP) and networking concepts for multiplayer gameplay.</p>
-
+        <p class="project-lede">A version of Yu-Gi-Oh, the well-known card game, built with Java and JavaFX during my first year at Sharif University of Technology. It covers object-oriented programming (OOP) and the networking needed for multiplayer games.</p>
       </header>
 
       <figure class="project-figure project-figure--hero">
         <img src="2.png" alt="Yu-Gi-Oh duel board showing a match against the AI" width="1267" height="707" />
         <figcaption>A duel against the AI opponent.</figcaption>
-                  <a class="source-link" href="https://github.com/Advanced-Programming-2021/project-team-33" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">&nearr;</span></a>
-
       </figure>
 
-      <section class="project-components" aria-labelledby="components-title">
-        <header class="project-components__heading">
-          <p>Architecture</p>
-          <h2 id="components-title">Project components</h2>
-        </header>
+      <section class="project-summary" aria-labelledby="architecture-title">
+        <h2 id="architecture-title">Architecture</h2>
+        <div class="project-summary__body">
+          <p>The game is built with object-oriented design: cards, players, decks, boards, phases, and effects are reusable domain classes and enums. It follows an MVC-style structure, where models store the game state, JavaFX views render each screen, and controllers run the rules and menus.</p>
+          <p>FXML scenes cover registration, deck building, the card shop, and the turn-based duel board. For multiplayer, a TCP protocol connects the desktop client to a Java server that keeps accounts and match state, while duels against the AI run locally.</p>
 
-        <div class="component-grid">
-          <article class="component">
-            <span aria-hidden="true">01</span>
-            <h3>OOP</h3>
-            <p>Cards, players, decks, boards, phases, and effects are represented as reusable domain classes and enums.</p>
-          </article>
-          <article class="component">
-            <span aria-hidden="true">02</span>
-            <h3>MVC-style structure</h3>
-            <p>Models store game state, JavaFX views render each screen, and controllers coordinate rules and menu workflows.</p>
-          </article>
-          <article class="component">
-            <span aria-hidden="true">03</span>
-            <h3>JavaFX interface</h3>
-            <p>FXML scenes cover registration, deck building, the card shop, and the turn-based duel board.</p>
-          </article>
-          <article class="component">
-            <span aria-hidden="true">04</span>
-            <h3>Client &amp; server</h3>
-            <p>A TCP protocol connects the desktop client to a Java server for accounts and multiplayer state, while AI duels run locally.</p>
-          </article>
+          <div class="project-actions">
+            <a class="source-link" href="https://github.com/Advanced-Programming-2021/project-team-33" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">&nearr;</span></a>
+          </div>
         </div>
       </section>
-
-    
 
       <figure class="project-figure project-figure--secondary">
         <img src="1.png" alt="Yu-Gi-Oh card shop interface with purchasable cards" loading="lazy" width="1272" height="705" />
